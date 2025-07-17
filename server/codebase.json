@@ -1,0 +1,19 @@
+[
+  {
+    "file": "main.py",
+    "functions": [
+      {
+        "name": "add_numbers",
+        "parameters": ["a", "b"],
+        "body": "return a + b",
+        "comment": "Adds two numbers."
+      },
+      {
+        "name": "multiply",
+        "parameters": ["x", "y"],
+        "body": "return x * y",
+        "comment": null
+      }
+    ]
+  }
+]
