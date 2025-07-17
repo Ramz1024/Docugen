@@ -4,6 +4,8 @@ import os
 
 app = Flask(__name__)
 
+TOKEN = os.environ.get("HF_API_TOKEN")
+
 # --- Place your parser function here ---
 def parse_code(file_path):
     pass
@@ -20,8 +22,8 @@ def upload():
     file_path = f"uploaded/{file.filename}"
     file.save(file_path)
 
-    parsed_data = parse_code(file_path)
-    documentation = summarize(parsed_data)
+    parsed_json_file_path = parse_code(file_path)
+    documentation = generate_documentation(parsed_json_file_path, "docs", TOKEN)
 
     os.remove(file_path)
 
